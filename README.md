@@ -1,6 +1,6 @@
 # jEdit.js
 
-jEdit.js is a text editor build in pure JavaScript, with no dependencies.
+jEdit.js is an extra small (2kb) rich text editor build in pure JavaScript, with no dependencies.
 
 Live Demo:
 
