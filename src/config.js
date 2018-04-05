@@ -38,7 +38,7 @@ export default {
     }, {
       icon: '&#8226;',
       title: 'Unordered List',
-      comName: 'insertOrderedList',
+      comName: 'insertUnorderedList',
       state: true,
     }, {
       icon: '&#128279;',
