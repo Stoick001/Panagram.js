@@ -33,7 +33,7 @@ Enabling jEdit.js is very easy, you just need to follow these two simple steps:
   });
   ```
 
-## Costume controls
+## Custom controls
 
 You can add your custom controls in config.js file. You can add to an existing set or create your own. If you do create your own share it so that other people can use it.
 

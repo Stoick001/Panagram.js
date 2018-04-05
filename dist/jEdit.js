@@ -77,7 +77,7 @@ var init = function init(settings) {
   outElement.contentEditable = true;
   outElement.classList.add('output-el');
 
-  ['click', 'touchstart'].forEach(function (evn) {
+  ['click', 'touch'].forEach(function (evn) {
     ctrElement.addEventListener(evn, function (e) {
       outElement.focus();
     });
@@ -99,7 +99,7 @@ var init = function init(settings) {
     button.setAttribute('type', 'button');
     button.classList.add('ctrl-btn');
 
-    ['click', 'touchstart'].forEach(function (evn) {
+    ['click', 'touch'].forEach(function (evn) {
       if (control.state) {
         button.addEventListener(evn, function () {
           return execute(button, control.comName);
