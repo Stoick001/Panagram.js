@@ -77,8 +77,10 @@ var init = function init(settings) {
   outElement.contentEditable = true;
   outElement.classList.add('output-el');
 
-  ctrElement.addEventListener('click', function (e) {
-    outElement.focus();
+  ['click', 'touchstart'].forEach(function (evn) {
+    ctrElement.addEventListener(evn, function (e) {
+      outElement.focus();
+    });
   });
 
   outElement.addEventListener('keydown', function (event) {
@@ -97,19 +99,21 @@ var init = function init(settings) {
     button.setAttribute('type', 'button');
     button.classList.add('ctrl-btn');
 
-    if (control.state) {
-      button.addEventListener('click', function () {
-        return execute(button, control.comName);
-      });
-    } else if (control.formatBlock) {
-      button.addEventListener('click', function () {
-        return execute(null, control.formatBlock, control.comName);
-      });
-    } else {
-      button.addEventListener('click', function () {
-        return execute(null, control.comName, control.extra());
-      });
-    }
+    ['click', 'touchstart'].forEach(function (evn) {
+      if (control.state) {
+        button.addEventListener(evn, function () {
+          return execute(button, control.comName);
+        });
+      } else if (control.formatBlock) {
+        button.addEventListener(evn, function () {
+          return execute(null, control.formatBlock, control.comName);
+        });
+      } else {
+        button.addEventListener(evn, function () {
+          return execute(null, control.comName, control.extra());
+        });
+      }
+    });
 
     ctrElement.append(button);
   });

@@ -15,8 +15,10 @@ export const init = (settings) => {
   outElement.contentEditable = true;
   outElement.classList.add('output-el');
 
-  ctrElement.addEventListener('click', (e) => {
-    outElement.focus();
+  ['click', 'touchstart'].forEach((evn) => {
+    ctrElement.addEventListener(evn, (e) => {
+      outElement.focus();
+    });
   });
 
 
@@ -36,13 +38,15 @@ export const init = (settings) => {
     button.setAttribute('type', 'button');
     button.classList.add('ctrl-btn');
 
-    if (control.state) {
-      button.addEventListener('click', () => execute(button, control.comName));
-    } else if (control.formatBlock) {
-      button.addEventListener('click', () => execute(null, control.formatBlock, control.comName));
-    } else {
-      button.addEventListener('click', () => execute(null, control.comName, (control.extra)()));
-    }
+    ['click', 'touchstart'].forEach((evn) => {
+      if (control.state) {
+        button.addEventListener(evn, () => execute(button, control.comName));
+      } else if (control.formatBlock) {
+        button.addEventListener(evn, () => execute(null, control.formatBlock, control.comName));
+      } else {
+        button.addEventListener(evn, () => execute(null, control.comName, (control.extra)()));
+      }
+    });
 
     ctrElement.append(button);
   });
