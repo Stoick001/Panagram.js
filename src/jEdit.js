@@ -44,7 +44,12 @@ export const init = (settings) => {
       } else if (control.formatBlock) {
         button.addEventListener(evn, () => execute(null, control.formatBlock, control.comName));
       } else {
-        button.addEventListener(evn, () => execute(null, control.comName, (control.extra)()));
+        button.addEventListener(evn, () => {
+          const val = (control.extra)();
+          if (val) {
+            execute(null, control.comName, val);
+          }
+        });
       }
     });
 

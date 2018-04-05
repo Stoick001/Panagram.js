@@ -110,7 +110,10 @@ var init = function init(settings) {
         });
       } else {
         button.addEventListener(evn, function () {
-          return execute(null, control.comName, control.extra());
+          var val = control.extra();
+          if (val) {
+            execute(null, control.comName, val);
+          }
         });
       }
     });
