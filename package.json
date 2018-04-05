@@ -1,6 +1,6 @@
 {
-  "name": "javascript-edit",
-  "version": "1.0.1",
+  "name": "jedit-rich",
+  "version": "1.0.0",
   "main": "./dist/jEdit.main.js",
   "scripts": {
     "dev": "gulp",

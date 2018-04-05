@@ -16,7 +16,7 @@ Enabling jEdit.js is very easy, you just need to follow these two simple steps:
   or
 
   ```
-  nmp install --save javascript-edit
+  nmp install --save jedit-rich
   ```
 
 #### initialize jEdit.js with init()
