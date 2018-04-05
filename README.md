@@ -8,7 +8,7 @@ Live Demo: https://jedit.herokuapp.com/
 
 Enabling jEdit.js is very easy, you just need to follow these two simple steps:
 
-#### include it from a dist folder
+#### include it from a dist/ folder
   ```
     <script src="dist/jEdit.min.js"></script>
   ```
