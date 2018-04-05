@@ -8,7 +8,7 @@ Live Demo:
 
 Enabling jEdit.js is very easy, you just need to follow these two simple steps:
 
-1.  #### include it from a dist folder
+#### include it from a dist folder
   ```
     <script src="dist/jEdit.min.js"></script>
   ```
@@ -19,7 +19,7 @@ Enabling jEdit.js is very easy, you just need to follow these two simple steps:
   nmp install --save javascript-edit
   ```
 
-2.  #### initialize jEdit.js with init()
+#### initialize jEdit.js with init()
   ```
   jEdit.init({
      // one of the pre built controls, required
