@@ -1,0 +1,1 @@
+.output-el{border:1px solid rgba(0,0,0,.2);border-radius:5px;height:500px;overflow-y:scroll}.output-el::-webkit-scrollbar{width:0;background:transparent}.output-el:focus{outline:none}.ctrl-btn{background-color:rgba(0,0,0,.1);border:none;width:30px;height:30px}.ctrl-btn:not(:last-child){margin-right:3px}.ctrl-btn:focus{outline:none}.active{background-color:rgba(0,0,0,.2)}
