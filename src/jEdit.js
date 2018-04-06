@@ -25,8 +25,10 @@ export const init = (settings) => {
     if (event.key === 'Tab') {
       event.preventDefault();
     }else if (event.key === 'Enter' && document.queryCommandValue('formatBlock') === 'blockquote') {
-      document.querySelectorAll('[title="Quote"]')[0].classList.toggle('active');
-      execute(null, 'formatBlock', '<div>');
+      setTimeout(() => {
+        document.querySelectorAll('[title="Quote"]')[0].classList.toggle('active');
+        execute(null, 'formatBlock', '<div>');
+      }, 0);
     }
   });
 
@@ -48,6 +50,15 @@ export const init = (settings) => {
     ['click', 'touch'].forEach((evn) => {
       if (control.state) {
         button.addEventListener(evn, () => execute(button, control.comName));
+        ['keyup', 'mouseup'].forEach(cnt => {
+          outElement.addEventListener(cnt, (e) => {
+            if (document.queryCommandState(control.comName)) {
+              button.classList.add('active');
+            } else if (button.classList.contains('active')) {
+              button.classList.remove('active');
+            }
+        });
+      });
       } else if (control.formatBlock) {
         button.addEventListener(evn, () => execute(null, control.formatBlock, control.comName));
       } else {
