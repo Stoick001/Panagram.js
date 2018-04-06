@@ -6,7 +6,7 @@
 
 var controlsPremade = {
   defaultControls: [{
-    icon: '<i>B</b>',
+    icon: '<b>B</b>', //fixed matching in tag surrounding icon text.
     title: 'Bold',
     comName: 'bold',
     state: true,
@@ -32,6 +32,11 @@ var controlsPremade = {
     icon: '<b>H<sub>2</sub></b>',
     title: 'Heading 2',
     comName: '<h2>',
+    formatBlock: 'formatBlock'
+  }, {
+    icon: 'P',
+    title: 'Paragraph',
+    comName: '<p>',
     formatBlock: 'formatBlock'
   }, {
     icon: '&#8220; &#8221;',

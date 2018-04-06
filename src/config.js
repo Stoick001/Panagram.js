@@ -29,6 +29,11 @@ export default {
       comName: '<h2>',
       formatBlock: 'formatBlock'
     }, {
+      icon: 'P',
+      title: 'Paragraph',
+      comName: '<p>',
+      formatBlock: 'formatBlock'
+    }, {
       icon: '&#8220; &#8221;',
       title: 'Quote',
       comName: '<blockquote>',
