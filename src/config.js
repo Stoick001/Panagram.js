@@ -1,7 +1,7 @@
 export default {
   defaultControls: [
     {
-      icon: '<i>B</b>',
+      icon: '<b>B</b>', //fixed matching in tag surrounding icon text.
       title: 'Bold',
       comName: 'bold',
       state: true,
