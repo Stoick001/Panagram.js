@@ -7,6 +7,14 @@ const execute = (el, command, val) => {
   document.execCommand(command, false, val ? val: null);
 }
 
+const isBold = (weight) => {
+  if(weight === 'bold' || weight === '700'){
+    return true;
+  }else{
+    return false;
+  }
+}
+
 export const init = (settings) => {
   const controls = controlsPremade[settings.controls];
   const ctrElement = settings.ctrElement;
@@ -25,6 +33,14 @@ export const init = (settings) => {
   outElement.addEventListener('keydown', event => {
     if (event.key === 'Tab') {
       event.preventDefault();
+    }else if (event.ctrlKey && event.key === 'b') {
+      let text = document.getSelection().anchorNode.parentNode;
+      let textStyle = window.getComputedStyle(text).fontWeight;
+      if( isBold(textStyle) ){
+        document.querySelectorAll('[title="Bold"]')[0].classList.remove('active');
+      }else{
+        document.querySelectorAll('[title="Bold"]')[0].classList.add('active');
+      }
     }else if (event.key === 'Enter' && document.queryCommandValue('formatBlock') === 'blockquote') {
       document.querySelectorAll('[title="Quote"]')[0].classList.toggle('active');
       execute(null, 'formatBlock', '<div>');

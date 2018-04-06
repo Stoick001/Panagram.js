@@ -69,6 +69,14 @@ var execute = function execute(el, command, val) {
   document.execCommand(command, false, val ? val : null);
 };
 
+var isBold = function isBold(weight) {
+  if (weight === 'bold' || weight === '700') {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 var init = function init(settings) {
   var controls = controlsPremade[settings.controls];
   var ctrElement = settings.ctrElement;
@@ -86,6 +94,14 @@ var init = function init(settings) {
   outElement.addEventListener('keydown', function (event) {
     if (event.key === 'Tab') {
       event.preventDefault();
+    } else if (event.ctrlKey && event.key === 'b') {
+      var text = document.getSelection().anchorNode.parentNode;
+      var textStyle = window.getComputedStyle(text).fontWeight;
+      if (isBold(textStyle)) {
+        document.querySelectorAll('[title="Bold"]')[0].classList.remove('active');
+      } else {
+        document.querySelectorAll('[title="Bold"]')[0].classList.add('active');
+      }
     } else if (event.key === 'Enter' && document.queryCommandValue('formatBlock') === 'blockquote') {
       document.querySelectorAll('[title="Quote"]')[0].classList.toggle('active');
       execute(null, 'formatBlock', '<div>');
