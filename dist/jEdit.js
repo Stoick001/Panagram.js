@@ -9,17 +9,20 @@ var controlsPremade = {
     icon: '<i>B</b>',
     title: 'Bold',
     comName: 'bold',
-    state: true
+    state: true,
+    short: 'b'
   }, {
     icon: '<i>I</i>',
     title: 'Italic',
     comName: 'italic',
-    state: true
+    state: true,
+    short: 'i'
   }, {
     icon: '<u>U</u>',
     title: 'Underline',
     comName: 'underline',
-    state: true
+    state: true,
+    short: 'u'
   }, {
     icon: '<b>H<sub>1</sub></b>',
     title: 'Heading 1',
@@ -98,6 +101,14 @@ var init = function init(settings) {
     button.title = control.title;
     button.setAttribute('type', 'button');
     button.classList.add('ctrl-btn');
+
+    if (control.short) {
+      document.addEventListener('keydown', function (event) {
+        if (event.ctrlKey && event.key === control.short) {
+          button.classList.toggle('active');
+        }
+      });
+    }
 
     ['click', 'touch'].forEach(function (evn) {
       if (control.state) {

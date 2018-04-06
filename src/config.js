@@ -5,16 +5,19 @@ export default {
       title: 'Bold',
       comName: 'bold',
       state: true,
+      short: 'b',
     }, {
       icon: '<i>I</i>',
       title: 'Italic',
       comName: 'italic',
       state: true,
+      short: 'i',
     }, {
       icon: '<u>U</u>',
       title: 'Underline',
       comName: 'underline',
       state: true,
+      short: 'u',
     }, {
       icon: '<b>H<sub>1</sub></b>',
       title: 'Heading 1',

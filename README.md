@@ -43,3 +43,4 @@ Quick rundown or different properties:
   3.  state - is used if a command is in a list of possible commands and does not need any additional data
   4.  formatBlock - is used if a command is not in a list of possible commands
   5.  extra - is used if a command is in a list of possible commands and does need additional data. Extra MUST return that additional data
+  6.  short - used for toggling active class on element with keyboard shortcuts

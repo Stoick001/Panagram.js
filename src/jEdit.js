@@ -21,7 +21,6 @@ export const init = (settings) => {
     });
   });
 
-
   outElement.addEventListener('keydown', event => {
     if (event.key === 'Tab') {
       event.preventDefault();
@@ -37,6 +36,14 @@ export const init = (settings) => {
     button.title = control.title;
     button.setAttribute('type', 'button');
     button.classList.add('ctrl-btn');
+
+    if (control.short) {
+      document.addEventListener('keydown', (event) => {
+        if (event.ctrlKey && event.key === control.short) {
+            button.classList.toggle('active');
+        }
+      })
+    }
 
     ['click', 'touch'].forEach((evn) => {
       if (control.state) {
