@@ -96,7 +96,6 @@ var init = function init(settings) {
       event.preventDefault();
     } else if (event.key === 'Enter' && document.queryCommandValue('formatBlock') === 'blockquote') {
       setTimeout(function () {
-        document.querySelectorAll('[title="Quote"]')[0].classList.toggle('active');
         execute(null, 'formatBlock', '<div>');
       }, 0);
     }
