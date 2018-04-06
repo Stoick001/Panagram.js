@@ -1,7 +1,7 @@
 import controlsPremade from './config';
 
 const execute = (el, command, val) => {
-  if (el) {
+  if (el && !command.includes('List')) {
     el.classList.toggle('active');
   }
   document.execCommand(command, false, val ? val: null);
