@@ -39,7 +39,7 @@ export const init = (settings) => {
 
     if (control.short) {
       document.addEventListener('keydown', (event) => {
-        if (event.ctrlKey && event.key === control.short) {
+        if (event.ctrlKey && event.key.toLowerCase() === control.short) {
             button.classList.toggle('active');
         }
       })
