@@ -51,7 +51,7 @@ export const init = (settings) => {
         button.addEventListener(evn, () => execute(button, control.comName));
         ['keyup', 'mouseup'].forEach(cnt => {
           outElement.addEventListener(cnt, (e) => {
-            if (document.queryCommandState(control.comName)) {
+            if (document.queryCommandState(control.comName) && !control.comName.includes('List')) {
               button.classList.add('active');
             } else if (button.classList.contains('active')) {
               button.classList.remove('active');

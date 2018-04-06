@@ -123,7 +123,7 @@ var init = function init(settings) {
         });
         ['keyup', 'mouseup'].forEach(function (cnt) {
           outElement.addEventListener(cnt, function (e) {
-            if (document.queryCommandState(control.comName)) {
+            if (document.queryCommandState(control.comName) && !control.comName.includes('List')) {
               button.classList.add('active');
             } else if (button.classList.contains('active')) {
               button.classList.remove('active');
