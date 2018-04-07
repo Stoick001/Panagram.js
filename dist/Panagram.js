@@ -94,11 +94,14 @@ var init = function init(settings) {
   outElement.addEventListener('keydown', function (event) {
     if (event.key === 'Tab') {
       event.preventDefault();
-    } else if (event.key === 'Enter' && document.queryCommandValue('formatBlock') === 'blockquote') {
+    } else if (event.key === 'Enter' && document.queryCommandValue('formatBlock') === 'blockquote' || outElement.innerHTML === "") {
       setTimeout(function () {
         execute(null, 'formatBlock', '<div>');
       }, 0);
     }
+    // else if (outElement.innerHTML === "") {
+    //   execute(null, 'formatBlock', '<div>');
+    // }
   });
 
   controls.forEach(function (control) {

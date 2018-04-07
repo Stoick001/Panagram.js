@@ -1,6 +1,6 @@
 {
   "name": "panagram",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "./dist/jsEdit.main.js",
   "scripts": {
     "dev": "gulp",

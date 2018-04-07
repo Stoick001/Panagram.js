@@ -24,7 +24,7 @@ export const init = (settings) => {
   outElement.addEventListener('keydown', event => {
     if (event.key === 'Tab') {
       event.preventDefault();
-    }else if (event.key === 'Enter' && document.queryCommandValue('formatBlock') === 'blockquote') {
+    } else if ((event.key === 'Enter' && document.queryCommandValue('formatBlock') === 'blockquote') || outElement.innerHTML === "") {
       setTimeout(() => {
         execute(null, 'formatBlock', '<div>');
       }, 0);
