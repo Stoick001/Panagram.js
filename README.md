@@ -2,7 +2,7 @@
 
 Panagram.js is an extra small (2kb) rich text editor build in pure JavaScript, with no dependencies.
 
-Live Demo: https://jedit.herokuapp.com/
+Live Demo: https://panagram.herokuapp.com/
 
 ## Setup
 
