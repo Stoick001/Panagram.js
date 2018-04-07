@@ -1,12 +1,12 @@
-# jsEdit
+# Panagram.js
 
-jsEdit is an extra small (2kb) rich text editor build in pure JavaScript, with no dependencies.
+Panagram.js is an extra small (2kb) rich text editor build in pure JavaScript, with no dependencies.
 
 Live Demo: https://jedit.herokuapp.com/
 
 ## Setup
 
-Enabling jsEdit.js is very easy, you just need to follow these two simple steps:
+Enabling Panagram.js is very easy, you just need to follow these two simple steps:
 
 #### include it from a dist/ folder
   ```

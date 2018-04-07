@@ -14,8 +14,8 @@ const livereload = require('gulp-livereload');
 
 const rollupConfig = minimize => ({
   rollup: Rollup,
-  entry: './src/jsEdit.js',
-  moduleName: 'jsEdit',
+  entry: './src/Panagram.js',
+  moduleName: 'Panagram',
   format: 'umd',
   exports: 'named',
   plugins: [babel({ exclude: 'node_modules/**' })].concat(
@@ -42,25 +42,25 @@ gulp.task('script', () => {
 
     gulp.src('./src/*.js')
       .pipe(rollup(rollupConfig(true)))
-      .pipe(rename('jsEdit.min.js'))
+      .pipe(rename('Panagram.min.js'))
       .pipe(size({ showFiles: true }))
       .pipe(size({ gzip: true, showFiles: true }))
       .pipe(gulp.dest('./dist'))
 });
 
 gulp.task('style', () => {
-  gulp.src(['./src/jsEdit.scss'])
+  gulp.src(['./src/Panagram.scss'])
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./dist'))
     .pipe(cssnano())
-    .pipe(rename('jsEdit.min.css'))
+    .pipe(rename('Panagram.min.css'))
     .pipe(gulp.dest('./dist'))
 });
 
 gulp.task('default', ['clean'], () => {
   run('script', 'style')
-  gulp.watch('./src/jsEdit.scss', ['style'])
-  gulp.watch('./src/jsEdit.js', ['script'])
+  gulp.watch('./src/Panagram.scss', ['style'])
+  gulp.watch('./src/Panagram.js', ['script'])
 });
 
 // gulp.task('default', ['clean', 'style', 'script'], () => {

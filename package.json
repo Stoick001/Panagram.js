@@ -1,7 +1,7 @@
 {
-  "name": "jedit-rich",
-  "version": "1.1.2",
-  "main": "./dist/jEdit.main.js",
+  "name": "panagram",
+  "version": "1.0.0",
+  "main": "./dist/jsEdit.main.js",
   "scripts": {
     "dev": "gulp",
     "build": "gulp clean && gulp script && gulp style"
