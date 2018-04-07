@@ -6,11 +6,11 @@ Live Demo: https://jedit.herokuapp.com/
 
 ## Setup
 
-Enabling jEdit.js is very easy, you just need to follow these two simple steps:
+Enabling jsEdit.js is very easy, you just need to follow these two simple steps:
 
 #### include it from a dist/ folder
   ```
-    <script src="dist/jEdit.min.js"></script>
+    <script src="dist/jsEdit.min.js"></script>
   ```
 
   or
@@ -21,7 +21,7 @@ Enabling jEdit.js is very easy, you just need to follow these two simple steps:
 
 #### initialize jsEdit with init()
   ```
-  jEdit.init({
+  jsEdit.init({
      // one of the pre built controls, required
     controls: 'defaultControls',
 
