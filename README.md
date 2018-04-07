@@ -10,18 +10,18 @@ Enabling Panagram.js is very easy, you just need to follow these two simple step
 
 #### include it from a dist/ folder
   ```
-    <script src="dist/jsEdit.min.js"></script>
+    <script src="dist/Panagram.min.js"></script>
   ```
 
   or
 
   ```
-  nmp install --save jedit-rich
+  nmp install --save panagram
   ```
 
-#### initialize jsEdit with init()
+#### initialize Panagram.js with init()
   ```
-  jsEdit.init({
+  Panagram.init({
      // one of the pre built controls, required
     controls: 'defaultControls',
 
