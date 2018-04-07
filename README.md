@@ -1,6 +1,6 @@
-# jEdit.js
+# jsEdit
 
-jEdit.js is an extra small (2kb) rich text editor build in pure JavaScript, with no dependencies.
+jsEdit is an extra small (2kb) rich text editor build in pure JavaScript, with no dependencies.
 
 Live Demo: https://jedit.herokuapp.com/
 
@@ -19,7 +19,7 @@ Enabling jEdit.js is very easy, you just need to follow these two simple steps:
   nmp install --save jedit-rich
   ```
 
-#### initialize jEdit.js with init()
+#### initialize jsEdit with init()
   ```
   jEdit.init({
      // one of the pre built controls, required

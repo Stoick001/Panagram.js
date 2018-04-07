@@ -14,8 +14,8 @@ const livereload = require('gulp-livereload');
 
 const rollupConfig = minimize => ({
   rollup: Rollup,
-  entry: './src/jEdit.js',
-  moduleName: 'jEdit',
+  entry: './src/jsEdit.js',
+  moduleName: 'jsEdit',
   format: 'umd',
   exports: 'named',
   plugins: [babel({ exclude: 'node_modules/**' })].concat(
@@ -42,25 +42,25 @@ gulp.task('script', () => {
 
     gulp.src('./src/*.js')
       .pipe(rollup(rollupConfig(true)))
-      .pipe(rename('jEdit.min.js'))
+      .pipe(rename('jsEdit.min.js'))
       .pipe(size({ showFiles: true }))
       .pipe(size({ gzip: true, showFiles: true }))
       .pipe(gulp.dest('./dist'))
 });
 
 gulp.task('style', () => {
-  gulp.src(['./src/jEdit.scss'])
+  gulp.src(['./src/jsEdit.scss'])
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./dist'))
     .pipe(cssnano())
-    .pipe(rename('jEdit.min.css'))
+    .pipe(rename('jsEdit.min.css'))
     .pipe(gulp.dest('./dist'))
 });
 
 gulp.task('default', ['clean'], () => {
   run('script', 'style')
-  gulp.watch('./src/jEdit.scss', ['style'])
-  gulp.watch('./src/jEdit.js', ['script'])
+  gulp.watch('./src/jsEdit.scss', ['style'])
+  gulp.watch('./src/jsEdit.js', ['script'])
 });
 
 // gulp.task('default', ['clean', 'style', 'script'], () => {
