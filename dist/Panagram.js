@@ -86,18 +86,14 @@ var init = function init(settings) {
   outElement.classList.add('output-el');
 
   ['click', 'touch'].forEach(function (evn) {
-    ctrElement.addEventListener(evn, function (e) {
-      outElement.focus();
-    });
+    ctrElement.addEventListener(evn, outElement.focus.bind(outElement));
   });
 
   outElement.addEventListener('keydown', function (event) {
     if (event.key === 'Tab') {
       event.preventDefault();
     } else if (event.key === 'Enter' && document.queryCommandValue('formatBlock') === 'blockquote' || outElement.innerHTML === "" || outElement.innerHTML === "<br>") {
-      setTimeout(function () {
-        execute(null, 'formatBlock', '<div>');
-      }, 0);
+      setTimeout(execute.bind(null, null, 'formatBlock', '<div>'), 0);
     }
   });
 
@@ -118,9 +114,7 @@ var init = function init(settings) {
 
     ['click', 'touch'].forEach(function (evn) {
       if (control.state) {
-        button.addEventListener(evn, function () {
-          return execute(button, control.comName);
-        });
+        button.addEventListener(evn, execute.bind(null, button, control.comName));
         ['keyup', 'mouseup'].forEach(function (cnt) {
           outElement.addEventListener(cnt, function (e) {
             if (document.queryCommandState(control.comName) && !control.comName.includes('List')) {
@@ -131,9 +125,7 @@ var init = function init(settings) {
           });
         });
       } else if (control.formatBlock) {
-        button.addEventListener(evn, function () {
-          return execute(null, control.formatBlock, control.comName);
-        });
+        button.addEventListener(evn, execute.bind(null, null, control.formatBlock, control.comName));
       } else {
         button.addEventListener(evn, function () {
           var val = control.extra();
