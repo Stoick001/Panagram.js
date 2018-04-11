@@ -9,7 +9,7 @@ Live Demo: https://panagram.herokuapp.com/
 Enabling Panagram.js is very easy, you just need to follow these two simple steps:
 
 #### include it from a dist/ folder
-  ```
+  ```html
     <script src="dist/Panagram.min.js"></script>
   ```
 
@@ -20,7 +20,7 @@ Enabling Panagram.js is very easy, you just need to follow these two simple step
   ```
 
 #### initialize Panagram.js with init()
-  ```
+  ```js
   Panagram.init({
      // one of the pre built controls, required
     controls: 'defaultControls',
